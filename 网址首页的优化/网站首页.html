@@ -33,8 +33,22 @@
 				height: 239px;
 			}
 		</style>
+		<script>
+			var srcIndex = 0;
+			function changeImg(){
+				var uimg = document.getElementById("img1");
+				srcIndex = srcIndex%3+1;
+				uimg.src = "img/"+srcIndex+".jpg";
+			}
+			
+			function init(){
+				setInterval("changeImg()",1500);
+			}
+			
+			
+		</script>
 	</head>
-	<body>
+	<body onload="init()">
 		<!--1、创建一个最外层div
 			2、第一部分，LOGO部分，嵌套三个div
 			3、第二部分：导航栏部分，放置5个超链接
@@ -58,7 +72,7 @@
 					</div>
 					<div class="logo" style="line-height: 45px;">
 						<a href="#">登陆</a>
-						<a href="#">注册</a>
+						<a href=" 网站注册页面.html">注册</a>
 						<a href="#">购物车</a>
 					</div>
 				</div>
@@ -76,7 +90,7 @@
 				</div>
 				<!--4、第三部分：轮播图-->
 				<div>
-					<img src="img/1.jpg" width="100%" src="img/2.jpg" src="img/3.jpg"/>
+					<img src="img/1.jpg" width="100%" id="img1"/>
 				</div>
 				<!--5、第四部分：嵌套一个3行7列表格-->
 				<div >

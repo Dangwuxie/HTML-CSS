@@ -2,9 +2,16 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>自动轮播图片</title>
+		<script>
+			function qiehuan(){
+				var img = document.getElementById("img1");
+				img.src = "../img/2.jpg";	
+			}
+		</script>
 	</head>
 	<body>
-		
+		<input type="button" value="点击切换图片" onclick="return qiehuan()"/><br />
+		<img src="../img/1.jpg" width="100%" id="img1"/>
 	</body>
 </html>
