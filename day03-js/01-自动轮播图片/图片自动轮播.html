@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--1、确定事件：文档加载完成的事件onlaod;
+		2、事件要触发：init()；
+		3、函数里面要做一些定义的事情；动态切换图片，操作页面元素，提供交互；
+			开启定时器，执行切换图片的函数changeImg();
+		4、changeImg()：获取要切换的元素；-->
+		
+		<script>
+		
+			var srcIndex = 0;
+			
+			function changeImg(){
+				//过去要切换的图片的id再修改src属性
+				var uimg1 = document.getElementById("img1");
+				srcIndex = srcIndex%3+1;
+				uimg1.src = "../img/"+srcIndex+".jpg";
+			}
+			
+			function init(){
+				setInterval("changeImg()",2000);
+			}
+			
+		</script>
+	</head>
+	<body onload="init()">
+		<img src="../img/1.jpg" width="100%" id="img1"/>;
+		
+	</body>
+</html>
