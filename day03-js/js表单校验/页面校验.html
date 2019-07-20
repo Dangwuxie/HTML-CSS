@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>页面校验</title>
+		<script>
+			function showTips3(spanID){
+				var uspan = document.getElementById(spanID);
+				
+				uspan.innerHTML = "<font color='#8B008B' size='2'>长度不能小于6位</font>";
+				
+			}
+			function checkUsername(){
+				
+				var uname = document.getElementById("username").value;
+				var uspan = document.getElementById("span_username");
+				
+				if(uname.length < 6){
+					uspan.innerHTML = "<font color='red' size='2'>长度小于6！</font>"
+					return false;
+				}else{
+					uspan.innerHTML = "<font color='green' size='2'>正确输入！</font>"
+					return true;
+				}
+			}
+			
+			function checkForm(){
+				var flag = checkUsername();
+				return flag;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form action="../01-自动轮播图片/图片自动轮播.html" onclick="return checkForm()">
+			请输入用户名：<input type="text" id="username" 
+			onfocus="showTips3('span_username')" onblur="checkUsername2()" 
+			onkeyup="checkUsername()"/><span id="span_username"></span><br />
+
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>

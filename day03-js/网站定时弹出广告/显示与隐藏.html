@@ -3,7 +3,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script>
+			function hideImg(){
+				var uimg = document.getElementById("img1");
+				uimg.style.display = "none";
+			}
+			
+			function showImg(){
+				var rimg = document.getElementById("img1");
+				rimg.style.display = "block";
+			}
+		</script>
 	</head>
 	<body>
+		<input type="button" value="显示" onclick="showImg()"/>
+		<input type="button" value="隐藏" onclick="hideImg()"/>
+		<br />
+		<img src="../img/1-161104143944.gif" id="img1"/>
 	</body>
 </html>
