@@ -106,9 +106,9 @@
 	</head>
 	<body>
 		<!--
-			onfocus="showTips()" ：光标点击到这个文本框的时候会显示一些东西，显示这个函数里面的东西；
-			onblur="checkUsername()" 输入文本之后光标点向别处，此文本框失去焦点的时候，调用这个函数校验；
-			onkeyup="checkUsername()"：不用失去光标，每输入一个字符就会校验一次；
+			获得焦点事件：onfocus="showTips()" ：光标点击到这个文本框的时候会显示一些东西，显示这个函数里面的东西；
+			失去焦点事件：onblur="checkUsername()" 输入文本之后光标点向别处，此文本框失去焦点的时候，调用这个函数校验；
+			按键抬起事件：onkeyup="checkUsername()"：不用失去光标，每输入一个字符就会校验一次；
 		-->
 		<form action="../01-自动轮播图片/轮播图片.html" onsubmit="return checkForms()">
 			
