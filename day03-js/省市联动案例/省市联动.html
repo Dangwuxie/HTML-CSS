@@ -3,17 +3,49 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		
+		<script>
+			var province = [
+			["深圳市","东莞市","惠州市","广州市"],
+			["长沙市","岳阳市","株洲市","湘潭市"],
+			["厦门市","福州市","潭州市","泉州市"]
+			];
+			
+			/*
+			 	1，确定事件：onchange
+			 	2、函数：selectProvince
+			 	3、函数里面：得到当前操作元素；得到当前选中的哪一个省份
+			 	从数组里面取出对应的城市信息，动态创建城市节点  添加到城市的select节点中去
+			 * */
+			function selectProvince(){
+				var provinces = document.getElementById("province");
+				//得到当前相应的省份
+				var value = provinces.value;
+				//取得对应下标的城市名称
+				var cities = province[value];
+				var selectcity = document.getElementById("city");
+				selectcity.options.length = 0;
+				for(var i = 0;i <cities.length;i++){
+					var citiestext = cities[i];
+					//alert(citiestext);
+					var textnode = document.createTextNode(citiestext);
+					var option1 = document.createElement("option");
+					option1.appendChild(textnode);
+					selectcity.append(option1);				
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<!--省市联动,选择省份-->
-		<select>
-			<option>--请选择--</option>
-			<option>广东</option>
-			<option>陕西</option>
-			<option>山西</option>
+		<select onchange="selectProvince()" id="province">
+			<option value="-1">--请选择--</option>
+			<option value="0">广东</option>
+			<option value="1">陕西</option>
+			<option value="2">山西</option>
 		</select>
 		<!--选择城市-->
-			<select></select>
+			<select id="city">
+				
+			</select>
 	</body>
 </html>
