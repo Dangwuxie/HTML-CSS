@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>扩展：三种选择器的优先级</title>
+		<style>
+			/*div{
+				color:red;
+			}
+			.class{
+				color: green;
+			}
+			#id{
+				color: deeppink;
+			}*/
+			/*行内样式>id选择器>类选择器>元素选择器*/
+			
+			/*就近原则*/
+			.second{
+				color: blue;
+			}
+			.first{
+				color: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--<div class="class" id="id" style="color: blue;">集中选择器的优先级</div>-->
+		<div class="first second">就近原则</div>
+	</body>
+</html>
