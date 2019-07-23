@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+			function changeJS(){
+				var div = document.getElementById("div1");
+				//div.innerHTML = "JS已经修改此处文本！11";
+				
+				/*JS对象转成JQ对象来修改页面内容*/
+				$(div).html("JS对象转成JQ对象来修改页面内容")
+			}
+			
+			$(function(){
+				//给按钮绑定事件；
+				$("#btn2").click(function(){
+					//找到div1
+//					$("#div1").html("JQ方式修改了此处的内容！！！");
+					
+					/*JQ对象转换成JS对象来修改页面内容*/
+					var $div = $("#div1");
+					//var div = $div.get(0);
+					var div = $div[0];
+					div.innerHTML = "JQ对象转换成JS对象来修改页面内容"
+					
+				})
+				
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" value="JS修改div内容" onclick="changeJS()"/>
+		<input type="button" value="JQ修改div内容" id="btn2"/>
+		<div id="div1">
+			这里的内容要被JS代码修改！~！！！
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/style.css" />
+		<!--引入JQ文件-->
+		<script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+		<!--下面要做的就是，选择到哪一个id就改变背景色-->
+		<script>
+			/*文档加载事件，页面初始化*/
+			/*
+			 	子元素选择器：选择器1->选择器2
+			 	后代选择器：选择器1  儿孙
+			 	相邻兄弟选择器：选择器1+选择器2：找出紧挨着的一个弟弟
+			  	找出所有弟弟：选择器1~选择器2：找出所有的弟弟
+			 */
+			$(function(){
+				//给按钮绑定事件,ID选择器
+				$("#btn1").click(function(){
+					//下面找到id为two的元素,找到后要修改它的背景色
+					$("#two").css("background-color","green");
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="找出ID为TWO的元素" id="btn1" />
+		<br />
+		<div id="one">
+			<div class="mini">
+				1-1
+			</div>
+		</div>
+		
+		<div id="two">
+			<div class="mini">2-1</div>
+			<div class="mini">2-2</div>
+		</div>
+		
+		<div id="three">
+			<div class="mini">3-1</div>
+			<div class="mini">3-2</div>
+			<div class="mini">3-3</div>
+		</div>
+		
+		<span id="four">span</span>
+	</body>
+</html>

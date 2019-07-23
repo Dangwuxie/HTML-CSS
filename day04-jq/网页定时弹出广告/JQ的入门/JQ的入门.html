@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--导包，引入JQ的文件-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+			//js中也有文档加载事件
+			window.onload = function(){
+				alert("window.onload = 111");
+			}
+			
+			window.onload = function(){
+				alert("window.onload = 222");
+			}
+			/*文档加载完成的事*/
+			$(document).ready(function(){
+  				// 在这里写你的代码...
+  				alert("$(document).ready(function()");
+			});
+			
+		 	jQuery(document).ready(function(){
+  				// 在这里写你的代码...
+  				alert("$(document).ready(function()");
+			});
+			
+			/*最简单的写法*/
+			$(function(){
+				alert("$(function()");
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
