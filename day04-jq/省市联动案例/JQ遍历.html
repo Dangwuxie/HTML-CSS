@@ -5,7 +5,7 @@
 		<title></title>
 		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
 		<script>
-			var cities = ["深圳市","东莞市","惠州市","广州市"];
+			
 			
 			//JQ对象调用遍历
 			/*$(cities).each(function(i,n){
@@ -13,9 +13,23 @@
 			});*/
 			
 			//	JQ的函数调用
-			$.each(cities,function(i,n){
+			/*$.each(cities,function(i,n){
 				alert(i+" "+n);
-			})
+			})*/
+			var cities = ["深圳市","东莞市","惠州市","广州市"];
+			//此函数要去遍历数据
+			function callback1(i,item){
+				console.log(i+" "+item);
+			}
+			function bianli(arr,callback1){
+				for(var i = 0;i < arr.length;i++){
+					var item = arr[i];
+					callback1(i,item);
+				}
+			}
+			
+			//调用函数
+			bianli(cities,callback1);
 		</script>
 		
 	</head>

@@ -3,41 +3,41 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
 		<script>
-			var province = [
+			var cities = [
 			["深圳市","东莞市","惠州市","广州市"],
 			["长沙市","岳阳市","株洲市","湘潭市"],
 			["厦门市","福州市","潭州市","泉州市"]
 			];
-			
 			/*
-			 	1，确定事件：onchange
-			 	2、函数：selectProvince
-			 	3、函数里面：得到当前操作元素；得到当前选中的哪一个省份
-			 	从数组里面取出对应的城市信息，动态创建城市节点  添加到城市的select节点中去
-			 * */
-			function selectProvince(){
-				var provinces = document.getElementById("province");
-				//得到当前相应的省份
-				var value = provinces.value;
-				//取得对应下标的城市名称
-				var cities = province[value];
-				var selectcity = document.getElementById("city");
-				selectcity.options.length = 0;
-				for(var i = 0;i <cities.length;i++){
-					var citiestext = cities[i];
-					//alert(citiestext);
-					var textnode = document.createTextNode(citiestext);
-					var option1 = document.createElement("option");
-					option1.appendChild(textnode);
-					selectcity.append(option1);				
-				}
-			}
+			 1、导入JQ的文件
+			 2、文档加载事件，页面初始化
+			 3、进一步确定事件：change事件
+			 4、函数，得到当前的省份
+			 5、得到城市，遍历城市数据
+			 6、将遍历出来的城市添加到城市的select中去
+			 */
+			$(function(){
+				
+				//事件触发函数selectProvince()
+				$("#province").change(function(){
+					//然后找出所选择的省份，根据下标遍历ucities
+					var ucities = cities[this.value];
+					$("#city").empty();
+					$(ucities).each(function(i,n){
+						//i就是遍历数组的下标值
+						$("#city").append("<option>"+n+"</option>");
+					});
+				});
+				
+			});
+			
 		</script>
 	</head>
 	<body>
 		<!--省市联动,选择省份-->
-		<select onchange="selectProvince()" id="province">
+		<select id="province">
 			<option value="-1">--请选择--</option>
 			<option value="0">广东</option>
 			<option value="1">陕西</option>
