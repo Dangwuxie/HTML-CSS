@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1、导入JQ的包
+			2、文档加载完成函数，页面初始化
+			3、获得所在的行、元素选择器
+			4、根据行号去改变颜色
+		-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+		//文档加载事件
+			$(function(){
+				//修改除去第一行其他所有偶数行的颜色
+				$("tr:even:gt(0)").css("background-color","yellow");
+				//修改奇数行的颜色
+				$("tr:odd").css("background-color","deeppink");
+			});
+			
+		</script>
+		
+	</head>
+	<body onload="init()">
+		<table border="1px" width="700px" align="center" id="tab">
+			<tr align="center">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>分类ID</td>
+				<td>分类名称</td>
+				<td>分类商品</td>
+				<td>分类描述</td>
+				<td>操作</td>
+			</tr>
+			<tr align="center">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>1</td>
+				<td>电子数码</td>
+				<td>游戏机，显示器，手柄</td>
+				<td>电子产品相关的一些东西</td>
+				<td><a href="#">修改</a> | <a href="#">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>2</td>
+				<td>内衣服饰</td>
+				<td>衬衣，短袖，内裤</td>
+				<td>贴身衣服</td>
+				<td><a href="#">修改</a> | <a href="#">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>3</td>
+				<td>生活用品</td>
+				<td>洗衣液，香皂，沐浴液</td>
+				<td>洗漱用品</td>
+				<td><a href="#">修改</a> | <a href="#">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>4</td>
+				<td>零食</td>
+				<td>薯条，蛋糕，瓜子</td>
+				<td>分类描述</td>
+				<td><a href="#">修改</a> | <a href="#">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>5</td>
+				<td>办公用品</td>
+				<td>笔记本，A4纸，中性笔</td>
+				<td>工作要用的东西</td>
+				<td><a href="#">修改</a> | <a href="#">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

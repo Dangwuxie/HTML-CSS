@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+			var cities = ["深圳市","东莞市","惠州市","广州市"];
+			
+			//JQ对象调用遍历
+			/*$(cities).each(function(i,n){
+				console.log(i+"   "+n);
+			});*/
+			
+			//	JQ的函数调用
+			$.each(cities,function(i,n){
+				alert(i+" "+n);
+			})
+		</script>
+		
+	</head>
+	<body>
+		
+	</body>
+</html>

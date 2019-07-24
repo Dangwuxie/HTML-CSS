@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/style.css" />
+		<script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function(){
+					//下面找到id为two的元素,找到后要修改它的背景色
+					//$("div").first().css("background-color","pink");
+					$("div:first").css("background-color","pink");
+				});
+			})
+			
+			$(function(){
+				$("#btn2").click(function(){
+					//找出加载顺序为偶数的元素
+					$("div:even").css("background-color","green");
+					//找出为奇数的
+					$("div:odd").css("background-color","yellow");
+				})
+			})
+			
+			$(function(){
+				$("#btn3").click(function(){
+					//找出加载顺序为偶数的元素
+					$("div:gt(1)").css("background-color","green");
+					//找出为奇数的
+					$("div:lt(2)").css("background-color","yellow");
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="找出body下的所有div元素" id="btn1" /><br />
+		<input type="button" value="找出body下的所有div的偶数和奇数的元素" id="btn2" /><br />
+		<input type="button" value="找出body下大于或者小于index的div元素" id="btn3" /><br />
+		<br />
+		<div id="one">
+			<div class="mini">
+				1-1
+			</div>
+		</div>
+		
+		<div id="two">
+			<div class="mini">2-1</div>
+			<div class="mini">2-2</div>
+		</div>
+		
+		<div id="three">
+			<div class="mini">3-1</div>
+			<div class="mini">3-2</div>
+			<div class="mini">3-3</div>
+		</div>
+		
+		<span id="four">span</span>
+	</body>
+</html>

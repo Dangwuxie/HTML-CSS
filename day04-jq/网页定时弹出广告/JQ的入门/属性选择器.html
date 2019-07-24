@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+		<link rel="stylesheet" href="../../css/style.css" />
+		<!--文档加载函数-->
+		<script>
+			$(function(){
+				//通过属性选择器找到href,一个属性
+//				$("a[href").css("color","red");
+				//多个属性
+//				$("a[href][title]").css("color","yellow");
+				//多个属性并且指定值的
+				$("a[href][title='testTitle']").css("color","pink");
+			});
+		</script>
+	</head>
+	<body>
+		<a href="#" >222 href 1111111</a>
+		<br />
+		<a href="#" title="testTitle" >222 href 2222222</a>
+	</body>
+</html>
