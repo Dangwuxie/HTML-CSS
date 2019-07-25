@@ -17,14 +17,68 @@
 				4、提交表单，submit
 		-->
 		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<link rel="stylesheet" href="../css/style.css" />
 		<script>
 			$(function(){
-				$(".bitian").Input(function(){
+				//$(".bitian").after("<font color = 'red'>*</font>");
+					//在必填项后面加一个小红点
+				//或者在引入的css文件中添加class属性，变成red
+				$(".bitian").after("<font class = 'high'>*</font>")
+				//事件绑定，给必填项绑定事件
+				$(".bitian").blur(function(){
+//					alert("123");
+					//获得当前事件是谁触发的
+					var value = this.value;
+					//用这个也可以获取值    var value = $(this).val();
 					
+					//清空必填项后面的span，不然每次失去焦点的时候都会增加一次span提示
+					$(this).parent().find(".formtips").remove();
 					
+					//我们不知道获取的是密码输入还是用户名输入，所以需要判断一下
+					//通过id选择器来判断
+					if($(this).is("#username")){
+						
+						//校验用户名
+						//在输入项的后面要动态添加一个提示出来，提示当前的输入是否合法
+						if(value.length < 6){
+							$(this).parent().append("<span class='formtips onError'>用户名太短了</span>")
+						}else{
+							$(this).parent().append("<span class='formtips onSuccess'>用户名正确</span>")
+						}
+					}
 					
+					if($(this).is("#password")){
+						//校验密码
+						if(value.length < 3){
+							$(this).parent().append("<span class='formtips onError'>密码太短了</span>")
+						}else{
+							$(this).parent().append("<span class='formtips onSuccess'>密码设置正确</span>")
+						}
+					}
+				//此处可以链式调用	
+				}).focus(function(){
+					//不停的触发上面的blur就可以不停的调用了，每次输入就会自动检测一次
+					$(this).triggerHandler("blur");
+				}).keyup(function(){
+					$(this).triggerHandler("blur");
 				});
 				
+				//下面就是提交表单了，
+				//给表单绑定提交事件
+				$("form").submit(function(){
+					//此时我们在提交事件里面要检测是否都输入正确
+					//此时就要再次检验一次两个必填项是否是正确的，再次触发一次blur事件
+					$(".bitian").trigger("focus");
+					//下面就是要检测是否出现了类formtips的span元素，
+					//如果出现了，就不能提交，否则就能提交
+					//直接找到类型是onError的span就行了
+					var length = $(".onError").length;
+					if(length > 0){
+						return false;
+					}
+					//submit表单都是要返回值的，暂时让它返回true
+					return true;
+				})
 			});
 			
 		</script>
@@ -32,10 +86,10 @@
 	<body>
 		<form>
 			<div>
-			用户名：<input type="text" class="bitian" />
+			用户名：<input type="text" class="bitian" id="username"/>
 			</div>
 			<div>
-				密码：<input type="password" class="bitian" />
+				密码：<input type="password" class="bitian" id="password"/>
 			</div>
 			<div>
 				手机号：<input type="tel" />
