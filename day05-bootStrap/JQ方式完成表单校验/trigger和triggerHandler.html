@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+			$(function(){
+				$("#username").focus(function(){
+					console.log("被触发了");
+				});
+				
+				$("#btn1").click(function(){
+					//触发一下text的focus
+					$("#username").trigger("focus");
+					
+				});
+				$("#btn2").click(function(){
+					//触发一下text的focus
+					$("#username").triggerHandler("focus");
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" id="username"/>
+		//trigger:触发事件，但是会执行类似将光标移到输入框内的这种浏览器默认行为
+		<input type="button" value="trigger触发一下text的focus函数" id="btn1" />
+		//triggerHandler：仅仅会触发事件所对应的函数，不会移动到光标
+		<input type="button" value="triggerHandler触发一下text的focus函数" id="btn2" />
+	</body>
+</html>

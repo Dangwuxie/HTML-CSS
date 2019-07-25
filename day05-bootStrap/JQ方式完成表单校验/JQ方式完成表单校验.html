@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1、首先给必填项，添加尾部一个小红点
+			2、获取用户输入的信息，做相应的校验
+			3、事件：获得焦点，失去焦点，按键抬起
+			4、表单提交的事件
+		-->
+		<!--
+			jq的方式来实现
+				1、导入JQ的文件
+				2、文档加载事件，必填项给后添加一个小红点
+				3、相关事件处理：表单校验确定事件：blur focus keyup
+				4、提交表单，submit
+		-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+			$(function(){
+				$(".bitian").Input(function(){
+					
+					
+					
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<form>
+			<div>
+			用户名：<input type="text" class="bitian" />
+			</div>
+			<div>
+				密码：<input type="password" class="bitian" />
+			</div>
+			<div>
+				手机号：<input type="tel" />
+			</div>
+			<div>
+				<input type="submit" value="提交" />
+			</div>
+		</form>
+	</body>
+</html>
