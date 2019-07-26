@@ -5,7 +5,7 @@
 		<title></title>
 		<style>
 		</style>
-		<link rel="stylesheet" href="../css/laohuangli.css" />
+		<link rel="stylesheet" href="../css/2laohuangli.css" />
 
 		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
 		<!--
@@ -28,13 +28,26 @@
 					//每一个对象都有一些信息；
 					//console.log(data);
 					
-					var obj = data[4];
+					var goodIndex = Math.floor(Math.random()*3+3) ;
+//					var obj = data[4];
 					//下面就要往框图里面动态添加信息
 					//第一个，适合干啥good
-					$(".good ul").append("<li><div class='name'>"+obj.name+"</div><div class='discription' >"+obj.good+"</div></li>");
+					while(goodIndex > 0){
+						var index =  Math.floor(Math.random()*data.length);
+						var obj = data[index];
+						$(".good ul").append("<li><div id='name'>"+obj.name+"</div><div id='description'>"+obj.good+"</div></li>");
+						goodIndex--;
+					}
+					  
 					//第二个，不适合干啥bad
-					$(".bad ul").append("<li><div class='name'>"+obj.name+"</div><div class='discription' >"+obj.bad+"</div></li>");
-
+					var badIndex = Math.floor(Math.random()*3+2) ;
+					while(badIndex > 0){
+						var index =  Math.floor(Math.random()*data.length);
+						var obj = data[index];
+						$(".bad ul").append("<li><div id='name'>"+obj.name+"</div><div id='description'>"+obj.bad+"</div></li>");
+						badIndex--;
+					}
+					
 				})
 				
 				
@@ -46,7 +59,7 @@
 	<body>
 		<div class="container">
 			<div class="title">
-				程序员老黄历
+				程序员日常掉头发安排
 			</div>
 			
 			<div class="good">

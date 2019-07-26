@@ -14,11 +14,12 @@ body {
 }
 
 .container>.title {
-	color: #bbb;
+	color: #FFEE44;
 	font-weight: bold;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	font-size: 17pt;
 	background: #555;
-	padding: 5px 15px;
+	padding: 40px 30px;
 }
 
 .split, .clear {
@@ -85,18 +86,22 @@ body {
 	padding:0;
 }
 
-.content ul li {
+.content ul li div#name{
 	line-height:150%;
 	font-size: 15pt;
 	font-weight: bold;
-	color: #444;
+	color: deeppink;
 }
 
-.content ul li div.description {
-	font-size: 5pt;
+.content ul li div#description{
+	/*font-size: 30pt;
 	font-weight: normal;
 	color: #FF6500;
 	line-height: 110%;
-	margin-bottom: 10px;
+	margin-bottom: 10px;*/
+	line-height:150%;
+	font-size: 13pt;
+	font-weight: bold;
+	color: #666666;
 }
 
