@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		</style>
+		<link rel="stylesheet" href="../css/laohuangli.css" />
+
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<!--
+			编程开发的过程遇到问题
+				达不到预期效果
+				1.检查自己代码
+				2.使用断点调试工具 javascript
+				3.百度 or 问同学 or 问同事
+				4.问老师
+				5.老师问总监
+		-->
+		<script>
+			$(function(){
+				//涉及到请求链接, 动态显示数据
+				
+				var url = "http://127.0.0.1:8020/HTML-CSS/day05-bootStrap/data.json";
+				//ajax  最简单异步请求网络，直接用get方式就可以了
+				$.get(url,function(data){
+					//可以输出这个数组，可以看到输出控制台有29个对象，
+					//每一个对象都有一些信息；
+					//console.log(data);
+					
+					var obj = data[4];
+					//下面就要往框图里面动态添加信息
+					//第一个，适合干啥good
+					$(".good ul").append("<li><div class='name'>"+obj.name+"</div><div class='discription' >"+obj.good+"</div></li>");
+					//第二个，不适合干啥bad
+					$(".bad ul").append("<li><div class='name'>"+obj.name+"</div><div class='discription' >"+obj.bad+"</div></li>");
+
+				})
+				
+				
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				程序员老黄历
+			</div>
+			
+			<div class="good">
+				<div class="title">
+					<table>
+						<tr><td>宜</td></tr>
+					</table>
+				</div>
+				
+				<div class="content">
+					<ul>
+									
+					</ul>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+			
+			<div class="split"></div>
+			
+			<div class="bad">
+			
+				<div class="title">
+					<table>
+						<tr><td>不宜</td></tr>
+					</table>
+				</div>
+				
+				<div class="content">
+					<ul>
+						
+					</ul>
+				</div>
+				
+				<div class="clear"></div>
+				
+			</div>
+			
+		</div>
+	</body>
+</html>
